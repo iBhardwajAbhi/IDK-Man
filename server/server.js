@@ -3,6 +3,7 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const prompt = require('./prompt');
+const cors = require('cors')
 
 const app = express();
 const PORT = 3000;
@@ -15,6 +16,8 @@ const io = new Server(server, {
 });
 
 app.use(bodyParser.json());
+
+app.use(cors())
 
 server.listen(PORT, () => {
 	console.log(`Socket IO Server is running on PORT : ${PORT}`);
