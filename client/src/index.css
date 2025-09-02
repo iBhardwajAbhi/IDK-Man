@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
 
+
 body {
-    @apply bg-gray-900 text-amber-200
+    @apply bg-gray-900 text-amber-200 font-[Inter] p-0 m-0
 }
 
 button {
-    @apply px-4 py-2 bg-indigo-600 border-2 rounded-md shadow-sm cursor-pointer hover:bg-indigo-900 disabled:cursor-not-allowed disabled:bg-gray-700
+    @apply px-4 py-2 bg-indigo-900 border-2 rounded-md shadow-sm cursor-pointer hover:bg-indigo-950 disabled:cursor-not-allowed disabled:bg-gray-700
 }
 
 input {

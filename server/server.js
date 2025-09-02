@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
 			score: 0,
 		};
 
-		console.log(`login : ${username} -> (${socket.id}) `);
+		console.log(`Login : ${username} -> (${socket.id}) `);
 	});
 
 	socket.on('message', (msg) => {
@@ -76,6 +76,7 @@ io.on('connection', (socket) => {
 				createdAt: Date.now(),
 			};
 			startQuizBroadCast(quizId);
+			console.log(`Quiz created : ${quizId} By : ${user.username} Topic : ${topic}`);
 		}
 	});
 
@@ -86,7 +87,7 @@ io.on('connection', (socket) => {
 			users[socket.id].score = 0;
 			socket.join(quizId);
 			io.to(quizId).emit(
-				'update-score',
+				'score-update',
 				Object.values(users).filter((user) => user.quizId === quizId)
 			);
 		} else {
@@ -102,6 +103,10 @@ io.on('connection', (socket) => {
 			} else {
 				users[socket.id].score -= 5;
 			}
+			io.to(user.quizId).emit(
+				'score-update',
+				Object.values(users).filter((usr) => usr.quizId === user.quizId)
+			);
 		}
 	});
 });
@@ -119,6 +124,7 @@ const startQuizBroadCast = async (quizId) => {
 				Object.values(users).filter((user) => user.quizId === quizId)
 			);
 			io.to(quizId).emit('quiz-end', quizes[quizId].quizData);
+			console.log(`Quiz ended : ${quizId}`);
 			delete quizes[quizId];
 		} else {
 			if (quizId)

@@ -33,7 +33,7 @@ const QuizBox = () => {
         }
     }, [])
     return (
-        <div className='w-[50%] border-2 p-4'>
+        <div className='lg:w-[50%] border-2 p-4'>
             <h1>Quiz</h1>
             {data ? <div className='flex flex-col gap-4'>
                 <div>Question number : {data.id}</div>

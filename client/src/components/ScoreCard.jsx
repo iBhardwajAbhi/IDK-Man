@@ -16,14 +16,14 @@ const ScoreCard = () => {
     }, [])
 
     return (
-        <div className='flex-1 m-2'>
-            <h1 className='mb-2'>Score Card</h1>
+        <div className='min-w-max m-2 flex-1'>
+            <h1 className='mb-2 mx-2'>Score Card</h1>
             {
                 scores ?
                     <ul className='list-image-none'>
                         {
                             scores.sort((a, b) => b.score - a.score).map((data, i) => {
-                                return <li className=''><h2>#{i + 1} - {data.username.toUpperCase()} : {data.score}</h2></li>
+                                return <li className=''><h2>{i + 1} - {data.username.toUpperCase()} -- {data.score}</h2></li>
                             })
                         }
                     </ul>

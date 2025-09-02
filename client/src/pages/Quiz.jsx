@@ -32,14 +32,14 @@ const Quiz = () => {
         {
             username ?
                 <div>
-                    <div className='flex justify-center gap-2 my-2'>
-                        <h1>Quiz ID : {quizId} </h1>
-                        <button className='!py-1 mx-2 uppercase' onClick={async () => {
+                    <div className='flex justify-around sm:justify-center items-center sm:gap-2 my-2'>
+                        <h2>Quiz ID : {quizId} </h2>
+                        <button className='!py-1 sm:mx-2 uppercase' onClick={async () => {
                             await navigator.clipboard.writeText(quiz.quizId)
                             toast.success('Copied : ' + quizId)
                         }}>Copy to Share</button>
                     </div>
-                    <div className='flex flex-row justify-around gap-4 m-4 border-2 rounded-md h-[75vh]'>
+                    <div className='flex lg:flex-row flex-col justify-around gap-4 m-4 border-2 rounded-md min-h-[75vh]'>
                         <ScoreCard />
                         <QuizBox />
                         <ChatBox />
