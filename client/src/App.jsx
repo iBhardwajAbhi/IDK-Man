@@ -13,6 +13,7 @@ function App() {
             <div className='flex flex-col justify-between h-[100vh]'>
                 <Toaster position='top-center' />
                 <NavBar />
+                <div className='flex-grow'>
                 <Routes>
                     <Route
                         path='/'
@@ -30,6 +31,7 @@ function App() {
                         element={<Result />}
                     />
                 </Routes>
+                </div>
                 <div className='text-center my-4'>Copyright © 2025 IDK-Man. All rights reserved.</div>
             </div>
         </BrowserRouter>

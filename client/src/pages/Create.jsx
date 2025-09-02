@@ -53,8 +53,7 @@ const Create = () => {
             {
                 username ?
                     <div>
-                        <h1 className='m-4 !text-amber-300'>Welcome {username}</h1>
-                        <div className='flex flex-col w-[50%] m-auto gap-2 border-2 p-4 rounded-md !bg-gray-800'>
+                        <div className='flex flex-col sm:w-[50%] my-4 m-auto gap-2 border-2 p-4 rounded-md !bg-gray-950'>
                             <h1>Join a Quiz</h1>
                             <label htmlFor="">Enter quiz id</label>
                             <input type="text" placeholder='12345' value={quizId} onChange={(e) => { setQuizId(e.target.value) }} />
@@ -69,7 +68,7 @@ const Create = () => {
                                 }
                             }}>Join Now</button>
                         </div>
-                        <div className='flex flex-col w-[50%] m-auto gap-2 border-2 p-4 rounded-md mt-8 !bg-gray-800'>
+                        <div className='flex flex-col sm:w-[50%] m-auto gap-2 border-2 p-4 rounded-md mt-8 !bg-gray-950'>
                             <h1>Create New Quiz</h1>
                             <label htmlFor="">Enter topic for quiz</label>
                             <input type="text" name="" id="" value={topic} onChange={(e) => { setTopic(e.target.value) }} />
